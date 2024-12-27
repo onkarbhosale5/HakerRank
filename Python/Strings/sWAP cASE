@@ -1,0 +1,9 @@
+def swap_case(s):
+    a = ""
+    for i in s:
+        if i.isalpha():
+            a+=i.swapcase()
+        else:
+            a+=i
+    return a
+
