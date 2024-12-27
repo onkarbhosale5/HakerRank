@@ -1,0 +1,6 @@
+/*
+Enter your query here.
+*/
+select round(sqrt(pow((c-a),2)+pow((d-b),2)),4)
+from (select min(LAT_N) as a,min(LONG_W) as b, max(LAT_N) as c, max(LONG_W) as d
+from station) t
