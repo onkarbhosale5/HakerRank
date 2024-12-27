@@ -1,0 +1,6 @@
+/*
+Enter your query here.
+*/
+select REPEAT('* ',@NUMBER :=@NUMBER-1) 
+from information_schema.tables,(select @NUMBER:=21) t
+limit 20
