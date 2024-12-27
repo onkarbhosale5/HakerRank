@@ -1,28 +1,16 @@
 /*
 Enter your query here.
 */
-select distinct city from station where city like 'a%a';
-select distinct city from station where city like 'a%e';
-select distinct city from station where city like 'a%i';
-select distinct city from station where city like 'a%o';
-select distinct city from station where city like 'a%u';
-select distinct city from station where city like 'e%a';
-select distinct city from station where city like 'e%e';
-select distinct city from station where city like 'e%i';
-select distinct city from station where city like 'e%o';
-select distinct city from station where city like 'e%u';
-select distinct city from station where city like 'i%a';
-select distinct city from station where city like 'i%e';
-select distinct city from station where city like 'i%i';
-select distinct city from station where city like 'i%o';
-select distinct city from station where city like 'i%u';
-select distinct city from station where city like 'o%a';
-select distinct city from station where city like 'o%e';
-select distinct city from station where city like 'o%i';
-select distinct city from station where city like 'o%o';
-select distinct city from station where city like 'o%u';
-select distinct city from station where city like 'u%a';
-select distinct city from station where city like 'u%e';
-select distinct city from station where city like 'u%i';
-select distinct city from station where city like 'u%o';
-select distinct city from station where city like 'u%u';
+select distinct city 
+from station 
+where (city like 'a%'
+or city like 'e%'
+or city like 'i%'
+or city like 'o%'
+or city like 'u%')
+and
+(city like '%a'
+or city like '%e'
+or city like '%i'
+or city like '%o'
+or city like '%u')
