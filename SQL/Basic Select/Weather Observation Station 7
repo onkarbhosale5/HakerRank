@@ -1,0 +1,8 @@
+/*
+Enter your query here.
+*/
+select distinct city from station where city regexp 'a$';
+select distinct city from station where city regexp 'e$';
+select distinct city from station where city regexp 'i$';
+select distinct city from station where city regexp 'o$';
+select distinct city from station where city regexp 'u$';
