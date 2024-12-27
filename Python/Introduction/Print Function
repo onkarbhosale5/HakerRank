@@ -1,0 +1,6 @@
+if __name__ == '__main__':
+    n = int(input())
+    var =''
+    for x in range(n):
+        var+=str(x+1)
+    print(var)
