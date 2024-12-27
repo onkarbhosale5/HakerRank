@@ -1,0 +1,6 @@
+/*
+Enter your query here.
+*/
+select round((abs(a-c)+ abs(b-d)),4)
+from (select min(LAT_N) as a, min(LONG_w) as b, max(LAT_N) as c, max(LONG_w) as d
+from STATION) t
