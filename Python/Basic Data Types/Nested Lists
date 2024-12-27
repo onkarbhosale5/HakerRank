@@ -1,0 +1,21 @@
+if __name__ == '__main__':
+    records = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        records.append([name, score])
+records.sort()
+min_score = 99999
+for i in range(len(records)):
+    if float(records[i][1]) < min_score:
+        min_score = float(records[i][1])
+temp = 99999
+for i in range(len(records)):
+    if float(min_score) < float(records[i][1]) < float(temp):
+        temp = float(records[i][1])
+output = []
+for i in range(len(records)):
+    if float(records[i][1]) == float(temp):
+        output.append(records[i][0])
+for i in output:
+    print(i)
