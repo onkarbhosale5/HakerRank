@@ -1,0 +1,29 @@
+SELECT 
+    h.hacker_id,h.name,COUNT(c.challenge_id)
+FROM Hackers h
+JOIN Challenges c
+ON h.hacker_id = c.hacker_id
+GROUP BY h.hacker_id,h.name
+HAVING COUNT(c.challenge_id) = (
+    SELECT
+        MAX(challenge_count)
+    FROM(
+        SELECT 
+            COUNT(c2.challenge_id) AS challenge_count
+        FROM Challenges c2
+        GROUP BY c2.hacker_id
+    ) AS sub
+)
+OR COUNT(c.challenge_id) IN (
+    SELECT
+        challenge_count1
+    FROM(
+        SELECT 
+            COUNT(c3.challenge_id) AS challenge_count1
+        FROM Challenges c3
+        GROUP BY c3.hacker_id
+    ) AS sub1
+    GROUP BY challenge_count1
+    HAVING COUNT(*) = 1
+)
+ORDER BY COUNT(c.challenge_id) DESC,h.hacker_id
